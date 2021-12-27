@@ -34,16 +34,15 @@ $('.box').click(function () {
 })
 
 // 打字机
-// 点击事件
-/*$('.click').click(function () {
+$('.box').click(function () {
     // 获取元素
     var text_typed = $(".text").text();
     // 初始化
     $(".text1").typed({
         strings: text_typed.split(","),
         typeSpeed: 130,
-        loop: true,
+        loop: false,
         backDelay: 1100,
         backSpeed: 50,
     });
-})*/
+})

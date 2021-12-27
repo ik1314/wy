@@ -1,0 +1,137 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/* 背景 */
+body{
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(200% 100% at bottom center,#f7f7b6,#e96f92,#75517d,#1b2947);
+    background: radial-gradient(220% 105% at top center,#1b2947 10%,#75517d 40%,#e96f92 65%,#f7f7b2);
+    background-attachment: fixed;
+    overflow: hidden;
+}
+@keyframes rotate{
+    0%{
+        transform: perspective(400px) rotateZ(20deg) rotateX(-40deg) rotateY(0);
+    }
+    100%{
+        transform: perspective(400px) rotateZ(20deg) rotateX(-40deg) rotateY(-360deg);
+    }
+}
+.stars{
+    transform: perspective(500px);
+    transform-style: preserve-3d;
+    position: absolute;
+    bottom: 0;
+    perspective-origin: 50% 100%;
+    left: 50%;
+    animation: rotate 90s infinite linear;
+}
+.star{
+    width: 2px;
+    height: 2px;
+    background: #f7f7b6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: 0 0 -300px;
+    transform: translate3d(0,0,-300px);
+    backface-visibility: hidden;
+}
+
+
+/* 爱心 */
+.wrap {
+    position: relative;
+    width: 420px;
+    height: 400px;
+    margin: 5% auto;
+    /* 此处的动画效果的一些属性，可自由发挥，动画名一定要和后面的相互对应 */
+    animation: love 1s infinite alternate;
+}
+.pause {background-position: 0 bottom;}
+/* 添加的文字信息的属性设置，可自由发挥 */
+.wrap p {
+    z-index: 1;
+    position: absolute;
+    top: -1%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 100px;
+    height: 30px;
+    color: yellow;
+    text-align: center;
+    line-height: 30px;
+}
+.wrap p input{
+    width: 50px;
+    height: 20px;
+}
+.box-left {
+    /* 此处通过给盒子1使用浮动属性使两个盒子重叠;或者第一个盒子不变，给第二个盒子用定位 用一种即可*/
+    /* float: left; */
+    width: 200px;
+    height: 350px;
+    background-color: red;
+    /* 平移、旋转 */
+    transform: translate(55px) rotate(-45deg);
+    /* 圆角属性 */
+    border-radius: 120px 120px 0 0;
+    /* 添加阴影光环 */
+    box-shadow: 0 0 80px 0 red;
+}
+
+.box-right {
+    /* 此处通过给盒子2使用定位属性使两个盒子重叠;或者给盒子1使用浮动属性，第二个盒子不变 用一种即可*/
+    position: relative;
+    top: -350px;
+    width: 200px;
+    height: 350px;
+    background-color: red;
+    /* 平移、旋转 */
+    transform: translate(161px) rotate(45deg);
+    /* 圆角属性 */
+    border-radius: 120px 120px 0 0;
+    /* 添加阴影光环 */
+    box-shadow: 0 0 80px 0 red;
+}
+
+/* 爱心的动画名字为love，一定要前后对应 */
+@keyframes love {
+
+    /* 此处主要是通过变形属性的缩放来实现跳动 */
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.8);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+/* 鼠标悬停的效果 */
+/* .wrap:hover {
+    animation-play-state: paused; 
+} */
+.music{
+    width: 100px;
+    height: 100px;
+}
+.typer{
+    width: 20%;
+    margin: auto;
+    overflow: hidden;
+}
+/* 打字机文本 */
+.text{
+    width: 100%;
+    text-indent: 2em;
+    display: none;
+}

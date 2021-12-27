@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>星空</title>
+    <link rel="stylesheet" href="css/com.css">
+    <link rel="stylesheet" type="text/css" href="css/come.css" media="screen and (min-width:400px) and (max-width:903px)" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/text.js"></script>
+    <script src="js/index.js"></script>
+</head>
+
+<body>
+    <!-- 爱心 -->
+    <div class="wrap">
+        <p class="love">I Love you<br><input type="button" class="box" value="点击"></p>
+        <div class="box-left">
+
+            <!-- 1 -->
+        </div>
+        <div class="box-right">
+            <!-- 2 -->
+        </div>
+    </div>
+    <div class="typer">
+        <div class="text">初始化，强啊初始化，强啊初始化，强啊初始化，强啊初始化，强啊初始化，强啊初始化，强啊初始化，强啊初始化，强啊初始化，强啊初始化，强啊</div>
+        <strong class="text1">|</strong>
+    </div>
+    <!-- 背景以及背景音乐 -->
+    <div class="back">
+        <!-- 音乐 -->
+        <div class="music">
+            <audio id="myaudio" src="music/au.mp3" autoplay="autoplay" controls="controls" loop="false"
+                hidden="true"></audio>
+            <!-- <input type="button" class="box" value="点击" /> -->
+        </div>
+        <!-- 星空背景 -->
+        <div class="stars"></div>
+
+    </div>
+</body>
+<script>
+    // 打字机
+    $('.box').click(function () {
+        // 获取元素
+        var text_typed = $(".text").text();
+        // 初始化
+        $(".text1").typed({
+            strings: text_typed.split(","),
+            typeSpeed: 130,
+            loop: true,
+            backDelay: 1100,
+            backSpeed: 50,
+        });
+    })
+</script>
+</html>
